@@ -12,7 +12,7 @@ public class Application {
         cars.wordList(null);
         SortCars sortCars = new SortCars("BMW", 2);
         sortCars.wordList(cars.carsList);
-        sortCars.wordList(new ArrayList<>());  // не уверен что правильно "3 - добавить вызов из экземпляра класса Б, передать массив new ArrayList<Stirng>"
+        sortCars.wordList(new ArrayList<>());  // Не уверен что правильно "3 - добавить вызов из экземпляра класса Б, передать массив new ArrayList<Stirng>"
 
 
     }
