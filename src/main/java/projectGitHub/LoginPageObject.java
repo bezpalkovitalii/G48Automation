@@ -1,4 +1,4 @@
-package Pages;
+package projectGitHub;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,16 +11,15 @@ public class LoginPageObject {
     private final By passwordField = By.name("password");
     private final By submitButton = By.name("commit");
 
-    public LoginPageObject(WebDriver driver){
-        this.driver =driver;
+    public LoginPageObject(WebDriver driver) {
+        this.driver = driver;
     }
 
-    public void login(String username, String password){
+    public void login(String username, String password) {
         driver.findElement(loginField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(submitButton).click();
     }
-
 
 
 }
