@@ -21,7 +21,7 @@ public class UITest extends BaseTest {
 
     @Test
     public void launch(){
-        loginpageobject.login("bezpalkovitalii", "268v7goE");
+        loginpageobject.login("******", "******"); //enter your credentials
         searchelements.search();
         valueComparison.comparison();
 
