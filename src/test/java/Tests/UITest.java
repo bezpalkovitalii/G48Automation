@@ -1,32 +1,45 @@
 package Tests;
 
-import projectGitHub.LoginPageObject;
-import projectGitHub.SearchElements;
+import projectGitHub.pages.LoginPage;
 import org.junit.Before;
 import org.junit.Test;
-import projectGitHub.ValueComparison;
 
 public class UITest extends BaseTest {
 
-    private LoginPageObject loginpageobject;
-    private SearchElements searchelements;
-    private ValueComparison valueComparison;
+    private LoginPage loginPage;
+
 
     @Before
     public void setUp() {
-            loginpageobject = new LoginPageObject(driver);
-            searchelements = new SearchElements(driver);
-            valueComparison = new ValueComparison(driver);
+        loginPage = new LoginPage(driver);
+
     }
 
     @Test
-    public void launch(){
-        loginpageobject.login("******", "******"); //enter your credentials
-        searchelements.search();
-        valueComparison.comparison();
-
+    public void comparisonVersionSelenium() {
+        loginPage.login(System.getProperty("username"), System.getProperty("password"))
+                .search()
+                .openProject()
+                .openXML()
+                .comparison()
+                .logout();
 
 
     }
 
+    @Test
+    public void showNameTab() {
+        loginPage.login(System.getProperty("username"), System.getProperty("password"))
+                .openProjectG48()
+                .displayTab()
+                .logout();
+    }
+
+    @Test
+    public void showCommitMessageTest() {
+        loginPage.login(System.getProperty("username"), System.getProperty("password"))
+                .openProjectG48()
+                .showCommitMessage()
+                .logout();
+    }
 }

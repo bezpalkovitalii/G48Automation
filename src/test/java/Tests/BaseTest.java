@@ -12,7 +12,7 @@ public abstract class BaseTest {
     protected WebDriver driver;
 
     @Before
-    public void init(){
+    public void init() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -20,7 +20,7 @@ public abstract class BaseTest {
     }
 
     @After
-    public void exit(){
+    public void exit() {
         driver.quit();
     }
 
