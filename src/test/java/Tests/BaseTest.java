@@ -13,6 +13,16 @@ public abstract class BaseTest {
 
     @Before
     public void init() {
+ /*       String browserName = System.getProperty("browser", "chrome");
+        switch (browserName) {
+
+            case "firefox":
+                this.driver = new FireFoxDriver();
+                break;
+            default:
+                this.driver = new ChromeDriver();
+        }
+*/
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();

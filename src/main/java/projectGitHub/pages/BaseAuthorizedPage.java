@@ -18,8 +18,10 @@ public abstract class BaseAuthorizedPage extends BasePage {
 
 
     public HomePage logout() {
+        LOG.debug("Выходим из приложения");
         driver.findElement(userProfileButton).click();
         waitFor10.until(ExpectedConditions.visibilityOf(driver.findElement(logOutButton))).click();
+        LOG.debug("Успешно вышли из приложения");
         return new HomePage(driver);
     }
 

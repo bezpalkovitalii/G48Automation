@@ -31,7 +31,9 @@
                 <version>2.12.4</version>
                 <configuration>
                     <systemPropertyVariables>
+                        <browser>firefox</browser>
                         <webdriver.chrome.driver>${project.basedir}\src\main\resources\drivers\chrome\89.0\chromedriver.exe</webdriver.chrome.driver>
+                        <webdriver.gecko.driver>${project.basedir}\src/main\resources\drivers\firefox\29.0\geckodriver.exe</webdriver.gecko.driver>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -55,6 +57,12 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
 

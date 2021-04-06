@@ -22,7 +22,8 @@ public class UITest extends BaseTest {
                 .openProject()
                 .openXML()
                 .comparison()
-                .logout();
+                .logout()
+                .checkIsLogOut();
 
 
     }

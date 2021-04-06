@@ -2,8 +2,7 @@ package projectGitHub.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import projectGitHub.pages.BasePage;
-import projectGitHub.pages.ProjectPage;
+import projectGitHub.pages.code.CodePage;
 
 public class SearchResultPage extends BaseAuthorizedPage {
 
@@ -15,11 +14,11 @@ public class SearchResultPage extends BaseAuthorizedPage {
         super(driver);
     }
 
-    public ProjectPage openProject() {
+    public CodePage openProject() {
 
         driver.findElement(projectLink).click();
 
-        return new ProjectPage(driver);
+        return new CodePage(driver);
 
 
     }
