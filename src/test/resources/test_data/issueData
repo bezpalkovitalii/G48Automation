@@ -1,0 +1,7 @@
+Title, Body, bug
+Title_1, Body_1, documentation
+Title_2, Body_2, question
+Title_3, Body_3, bug; documentation
+Title_4, Body_4, bug; question
+Title_5, Body_5, documentation; question
+Title_6, Body_6, bug; documentation; question
