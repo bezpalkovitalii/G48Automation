@@ -9,13 +9,13 @@ public class SomeTest {
 
     @Test
     public void readDataSomeExcel(){
-        readDataFromExcelFile("E:\\QA_Light\\G48_Automation_Bezpalko_№_4\\src\\test\\resources\\test_data\\fileExcel.xls",
+        readDataFromExcelFile(System.getProperty("user.dir") + "\\src\\test\\resources\\test_data\\fileExcel.xls",
                 "Sheet1").forEach(System.out::println);
     }
 
     @Test
     public void writeToExcel(){
-        writeToExcelFileAndGet("E:\\QA_Light\\G48_Automation_Bezpalko_№_4\\src\\test\\resources\\test_data\\Write.xlsx",
+        writeToExcelFileAndGet(System.getProperty("user.dir") + "\\src\\test\\resources\\test_data\\Write.xlsx",
                 readDataFromExcelFile("E:\\QA_Light\\G48_Automation_Bezpalko_№_4\\src\\test\\resources\\test_data\\fileExcel.xls",
                 "Sheet1"));
     }

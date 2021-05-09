@@ -36,7 +36,7 @@ public class IssueCreationTestExcel extends BaseTest{
     @Parameterized.Parameters
     public static List<Object[]> data() {
         List<Object[]> result = readExcelIssueTest(
-                "E:\\QA_Light\\G48_Automation_Bezpalko_№_4\\src\\test\\resources\\test_data\\TitleBodyLabels.xls",
+                System.getProperty("user.dir") + "\\src\\test\\resources\\test_data\\TitleBodyLabels.xls",
                 "Sheet1");
         return result;
     }

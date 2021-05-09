@@ -32,7 +32,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <browser>firefox</browser>
-                        <webdriver.chrome.driver>${project.basedir}\src\main\resources\drivers\chrome\89.0\chromedriver.exe</webdriver.chrome.driver>
+                        <webdriver.chrome.driver>${project.basedir}/src/main/resources/drivers/chrome/90.0/chromedriver.exe</webdriver.chrome.driver>
                         <webdriver.gecko.driver>${project.basedir}\src/main\resources\drivers\firefox\29.0\geckodriver.exe</webdriver.gecko.driver>
                     </systemPropertyVariables>
                 </configuration>

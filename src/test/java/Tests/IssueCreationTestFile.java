@@ -35,7 +35,7 @@ public class IssueCreationTestFile extends BaseTest {
     @Parameterized.Parameters
     public static List<Object[]> data() {
         List<Object[]> result = new ArrayList<>();
-        List<String> dataFromFile = readFile("E:\\QA_Light\\G48_Automation_Bezpalko_№_4\\src\\test\\resources\\test_data\\issueData");
+        List<String> dataFromFile = readFile(System.getProperty("user.dir") + "\\src\\test\\resources\\test_data\\issueData");
         for (String line : dataFromFile) {
             String[] temp = line.split(", ");
             result.add(new Object[]{temp[0], temp[1], Arrays.asList(temp[2].split("; "))});
