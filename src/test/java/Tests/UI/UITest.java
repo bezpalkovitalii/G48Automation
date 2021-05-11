@@ -1,4 +1,4 @@
-package Tests;
+package Tests.UI;
 
 import projectGitHub.pages.LoginPage;
 import org.junit.Before;

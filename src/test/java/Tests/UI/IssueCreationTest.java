@@ -1,9 +1,8 @@
-package Tests;
+package Tests.UI;
 
 import org.junit.Before;
 import org.junit.Test;
 import projectGitHub.pages.LoginPage;
-import projectGitHub.pages.issues.IssuesPage;
 
 import java.util.ArrayList;
 import java.util.List;

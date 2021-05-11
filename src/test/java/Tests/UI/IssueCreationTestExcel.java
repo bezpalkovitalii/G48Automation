@@ -1,4 +1,4 @@
-package Tests;
+package Tests.UI;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -6,8 +6,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import projectGitHub.pages.LoginPage;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static helpers.ExcelHelper.readExcelIssueTest;

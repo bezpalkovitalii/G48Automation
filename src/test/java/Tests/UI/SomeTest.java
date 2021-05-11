@@ -1,4 +1,4 @@
-package Tests;
+package Tests.UI;
 
 import org.junit.Test;
 
@@ -16,7 +16,7 @@ public class SomeTest {
     @Test
     public void writeToExcel(){
         writeToExcelFileAndGet(System.getProperty("user.dir") + "\\src\\test\\resources\\test_data\\Write.xlsx",
-                readDataFromExcelFile("E:\\QA_Light\\G48_Automation_Bezpalko_№_4\\src\\test\\resources\\test_data\\fileExcel.xls",
+                readDataFromExcelFile(System.getProperty("user.dir") + "\\src\\test\\resources\\test_data\\fileExcel.xls",
                 "Sheet1"));
     }
 

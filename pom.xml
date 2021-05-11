@@ -5,12 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>G48AutomationTest</artifactId>
+    <artifactId>G48Automation</artifactId>
     <version>0.1.1</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <aspectj.version>1.9.6</aspectj.version>
     </properties>
 
     <build>
@@ -30,14 +31,36 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.12.4</version>
                 <configuration>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                     <systemPropertyVariables>
                         <browser>firefox</browser>
-                        <webdriver.chrome.driver>${project.basedir}/src/main/resources/drivers/chrome/90.0/chromedriver.exe</webdriver.chrome.driver>
-                        <webdriver.gecko.driver>${project.basedir}\src/main\resources\drivers\firefox\29.0\geckodriver.exe</webdriver.gecko.driver>
+                        <webdriver.chrome.driver>
+                            ${project.basedir}/src/main/resources/drivers/chrome/90.0/chromedriver.exe
+                        </webdriver.chrome.driver>
+                        <webdriver.gecko.driver>
+                            ${project.basedir}/src/main/resources/drivers/firefox/29.0/geckodriver.exe
+                        </webdriver.gecko.driver>
+                        <allure.results.directory>${project.basedir}/target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>io.qameta.allure.junit4.AllureJunit4</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>2.8.1</reportVersion>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -88,6 +111,44 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
             <version>3.141.59</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.13.9</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>2.13.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
 
     </dependencies>

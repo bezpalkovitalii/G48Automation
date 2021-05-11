@@ -1,4 +1,4 @@
-package Tests;
+package Tests.UI;
 
 import org.junit.Before;
 import org.junit.Test;
