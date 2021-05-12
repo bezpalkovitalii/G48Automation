@@ -15,7 +15,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static java.lang.System.getProperty;
 
-public class NpSettlementsTest extends BaseApiTest{
+public class NpSettlementsTest extends BaseApiTest {
 
     private Map<String, Object> body = new HashMap<>();
 

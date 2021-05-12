@@ -5,8 +5,6 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import io.qameta.allure.*;
 import io.qameta.allure.junit4.DisplayName;
 
-
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.http.ContentType;
 import org.hamcrest.Matcher;

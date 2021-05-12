@@ -11,6 +11,10 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <driver.dir.path>${project.basedir}/src/main/resources/drivers</driver.dir.path>
+        <browser>${browser}</browser>
+        <driver.name>${driver.name}</driver.name>
+        <driver.path>${driver.path}</driver.path>
         <aspectj.version>1.9.6</aspectj.version>
     </properties>
 
@@ -33,16 +37,10 @@
                 <configuration>
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <argLine>
+                        -Dbrowser=${browser} -D${driver.name}=${driver.path}
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <systemPropertyVariables>
-                        <browser>firefox</browser>
-                        <webdriver.chrome.driver>
-                            ${project.basedir}/src/main/resources/drivers/chrome/90.0/chromedriver.exe
-                        </webdriver.chrome.driver>
-                        <webdriver.gecko.driver>
-                            ${project.basedir}/src/main/resources/drivers/firefox/29.0/geckodriver.exe
-                        </webdriver.gecko.driver>
                         <allure.results.directory>${project.basedir}/target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                     <properties>
@@ -63,6 +61,28 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>Chrome</id>
+            <properties>
+                <browser>chrome</browser>
+                <browser.version>90.0</browser.version>
+                <driver.name>webdriver.chrome.driver</driver.name>
+                <driver.path>${driver.dir.path}/chrome/${browser.version}/chromedriver.exe</driver.path>
+            </properties>
+        </profile>
+        <profile>
+            <id>Firefox</id>
+            <properties>
+                <browser>firefox</browser>
+                <browser.version>88.0</browser.version>
+                <driver.name>webdriver.gecko.driver</driver.name>
+                <driver.path>${driver.dir.path}/firefox/${browser.version}/geckodriver.exe</driver.path>
+                <aspectj.version>1.8.10</aspectj.version>
+            </properties>
+        </profile>
+    </profiles>
 
     <dependencies>
 
@@ -149,6 +169,12 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>3.141.59</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
