@@ -1,7 +1,7 @@
 Title, Body, bug
-Title_1, Body_1, documentation
-Title_2, Body_2, question
-Title_3, Body_3, bug; documentation
-Title_4, Body_4, bug; question
-Title_5, Body_5, documentation; question
-Title_6, Body_6, bug; documentation; question
+Title_01, Body_01, documentation
+Title_02, Body_02, question
+Title_03, Body_03, bug; documentation
+Title_04, Body_04, bug; question
+Title_05, Body_05, documentation; question
+Title_06, Body_06, bug; documentation; question

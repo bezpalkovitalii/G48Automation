@@ -1,5 +1,7 @@
 package Tests.UI;
 
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
 import org.junit.Test;
 import projectGitHub.pages.LoginPage;
@@ -18,6 +20,13 @@ public class IssueCreationTest extends BaseTest {
         labels.add("bug");
         labels.add("invalid");
     }
+
+    @TmsLink("GitHub-001")
+    @Description("Check issue creation")
+    @Story("Positive")
+    @Feature("Github Issue Creation")
+    @Owner("Bezpalko")
+    @Severity(SeverityLevel.CRITICAL)
 
     @Test
     public void checkIssueCreation() {
